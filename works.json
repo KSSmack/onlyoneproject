@@ -1,0 +1,34 @@
+[
+  { "id": "byh", "title": "백야행", "year": 1999, "period": 1, "motives": [5, 4], "sub": ["사회파", "대반전"], "theme": ["격차·빈곤", "가족"], "starter": false, "immersive": true, "verified": true },
+  { "id": "swk", "title": "방황하는 칼날", "year": 2004, "period": 2, "motives": [1, 5], "sub": ["사회파", "서스펜스"], "theme": ["소년범죄"], "starter": false, "immersive": true, "verified": true },
+  { "id": "xhs", "title": "용의자 X의 헌신", "year": 2005, "period": 2, "motives": [2, 4], "sub": ["본격추리", "대반전"], "theme": ["가족"], "starter": true, "immersive": true, "verified": true },
+
+  { "id": "hbg", "title": "방과 후", "year": 1985, "period": 1, "motives": [6], "sub": ["본격추리"], "theme": ["학교"], "starter": true, "immersive": false, "verified": false },
+  { "id": "jse", "title": "졸업", "year": 1986, "period": 1, "motives": [1], "sub": ["본격추리", "형사물"], "theme": ["학교"], "starter": false, "immersive": false, "verified": false },
+  { "id": "sjp", "title": "십자저택의 피에로", "year": 1989, "period": 1, "motives": [4], "sub": ["본격추리"], "theme": [], "starter": false, "immersive": false, "verified": false },
+  { "id": "smy", "title": "숙명", "year": 1990, "period": 1, "motives": [1], "sub": ["본격추리", "서스펜스"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
+  { "id": "bsn", "title": "변신", "year": 1991, "period": 1, "motives": [6], "sub": ["서스펜스"], "theme": ["의료·과학"], "starter": false, "immersive": true, "verified": false },
+  { "id": "gms", "title": "가면산장 살인사건", "year": 1995, "period": 1, "motives": [6, 1], "sub": ["본격추리", "대반전"], "theme": [], "starter": true, "immersive": true, "verified": false },
+  { "id": "aki", "title": "악의", "year": 1996, "period": 1, "motives": [1], "sub": ["형사물", "대반전"], "theme": ["학교"], "starter": false, "immersive": true, "verified": false },
+  { "id": "gal", "title": "탐정 갈릴레오", "year": 1998, "period": 1, "motives": [6], "sub": ["과학수사", "본격추리"], "theme": ["의료·과학"], "starter": true, "immersive": false, "verified": false },
+  { "id": "bml", "title": "비밀", "year": 1998, "period": 1, "motives": [0], "sub": ["휴먼·감동", "서스펜스"], "theme": ["가족"], "starter": false, "immersive": true, "verified": false },
+
+  { "id": "pyj", "title": "예지몽", "year": 2000, "period": 2, "motives": [6], "sub": ["서스펜스", "과학수사"], "theme": [], "starter": false, "immersive": false, "verified": false },
+  { "id": "gyu", "title": "게임의 이름은 유괴", "year": 2002, "period": 2, "motives": [3, 1], "sub": ["서스펜스", "대반전"], "theme": [], "starter": false, "immersive": true, "verified": false },
+  { "id": "pje", "title": "편지", "year": 2003, "period": 2, "motives": [3, 5], "sub": ["사회파", "휴먼·감동"], "theme": ["범죄자 가족", "격차·빈곤"], "starter": false, "immersive": true, "verified": false },
+  { "id": "rsg", "title": "붉은 손가락", "year": 2006, "period": 2, "motives": [4], "sub": ["형사물", "사회파"], "theme": ["가족", "복지·고령"], "starter": false, "immersive": true, "verified": false },
+  { "id": "ysi", "title": "유성의 인연", "year": 2008, "period": 2, "motives": [1, 3], "sub": ["서스펜스", "휴먼·감동"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
+  { "id": "sgg", "title": "성녀의 구제", "year": 2008, "period": 2, "motives": [2], "sub": ["과학수사", "본격추리", "대반전"], "theme": ["가족"], "starter": false, "immersive": true, "verified": false },
+  { "id": "scj", "title": "신참자", "year": 2009, "period": 2, "motives": [6], "sub": ["형사물", "휴먼·감동"], "theme": ["가족"], "starter": true, "immersive": false, "verified": false },
+
+  { "id": "bej", "title": "백은의 잭", "year": 2010, "period": 3, "motives": [3], "sub": ["서스펜스"], "theme": [], "starter": false, "immersive": false, "verified": false },
+  { "id": "krn", "title": "기린의 날개", "year": 2011, "period": 3, "motives": [4, 5], "sub": ["형사물", "사회파"], "theme": ["노동·산재", "가족"], "starter": false, "immersive": true, "verified": false },
+  { "id": "msk", "title": "매스커레이드 호텔", "year": 2011, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": [], "starter": true, "immersive": false, "verified": false },
+  { "id": "nmy", "title": "나미야 잡화점의 기적", "year": 2012, "period": 3, "motives": [0], "sub": ["휴먼·감동"], "theme": ["가족", "고민 상담"], "starter": true, "immersive": true, "verified": false },
+  { "id": "mhh", "title": "몽환화", "year": 2013, "period": 3, "motives": [1], "sub": ["서스펜스"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
+  { "id": "gdm", "title": "기도의 막이 내릴 때", "year": 2013, "period": 3, "motives": [4, 5], "sub": ["형사물", "휴먼·감동"], "theme": ["가족", "격차·빈곤"], "starter": false, "immersive": true, "verified": false },
+  { "id": "gsj", "title": "공허한 십자가", "year": 2014, "period": 3, "motives": [5, 1], "sub": ["사회파"], "theme": ["사형·정의", "범죄 피해"], "starter": false, "immersive": true, "verified": false },
+  { "id": "lpm", "title": "라플라스의 마녀", "year": 2015, "period": 3, "motives": [6], "sub": ["과학수사", "서스펜스"], "theme": ["의료·과학"], "starter": false, "immersive": false, "verified": false },
+  { "id": "knm", "title": "녹나무의 파수꾼", "year": 2020, "period": 3, "motives": [0], "sub": ["휴먼·감동"], "theme": ["가족"], "starter": true, "immersive": false, "verified": false },
+  { "id": "bsm", "title": "블랙 쇼맨과 이름 없는 마을의 살인", "year": 2020, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": ["지역·사회"], "starter": false, "immersive": false, "verified": false }
+]
