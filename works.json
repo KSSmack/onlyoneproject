@@ -30,5 +30,6 @@
   { "id": "gsj", "title": "공허한 십자가", "year": 2014, "period": 3, "motives": [5, 1], "sub": ["사회파"], "theme": ["사형·정의", "범죄 피해"], "starter": false, "immersive": true, "verified": false },
   { "id": "lpm", "title": "라플라스의 마녀", "year": 2015, "period": 3, "motives": [6], "sub": ["과학수사", "서스펜스"], "theme": ["의료·과학"], "starter": false, "immersive": false, "verified": false },
   { "id": "knm", "title": "녹나무의 파수꾼", "year": 2020, "period": 3, "motives": [0], "sub": ["휴먼·감동"], "theme": ["가족"], "starter": true, "immersive": false, "verified": false },
-  { "id": "bsm", "title": "블랙 쇼맨과 이름 없는 마을의 살인", "year": 2020, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": ["지역·사회"], "starter": false, "immersive": false, "verified": false }
+  { "id": "bsm", "title": "블랙 쇼맨과 이름 없는 마을의 살인", "year": 2020, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": ["지역·사회"], "starter": false, "immersive": false, "verified": false },
+  { "id": "bcb", "title": "백조와 박쥐", "year": 2021, "period": 3, "motives": [4, 5], "sub": ["사회파", "대반전"], "theme": ["사법·정의", "가족"], "starter": false, "immersive": true, "verified": false }
 ]
