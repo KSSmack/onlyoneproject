@@ -21,8 +21,6 @@
   h1{font-size:28px;line-height:1.25;margin:0 0 6px;font-weight:800;letter-spacing:-.01em;}
   .sub{color:var(--ink-soft);font-size:14px;margin:0;}
   .byline{margin-top:12px;font-size:12.5px;color:var(--ink-soft);}
-  .banner{margin:16px 0 4px;border:1px dashed var(--accent);border-radius:8px;background:rgba(122,31,43,.05);padding:12px 14px;font-size:13px;color:#5a2028;}
-  .banner b{color:var(--accent);}
   .tabs{display:flex;gap:6px;margin:22px 0 6px;border-bottom:1px solid var(--line);}
   .tab{border:0;background:none;padding:10px 16px;font-size:15px;font-weight:700;color:var(--ink-soft);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;}
   .tab.on{color:var(--ink);border-bottom-color:var(--accent);}
@@ -60,10 +58,6 @@
   .modal{background:var(--card);max-width:540px;width:100%;border-radius:12px;padding:22px;border:1px solid var(--line);}
   .modal h3{margin:0 0 2px;font-size:19px;} .modal .pm{color:var(--ink-soft);font-size:12.5px;margin:0 0 14px;}
   .row{display:grid;grid-template-columns:92px 1fr;gap:6px 12px;font-size:13.5px;padding:8px 0;border-top:1px solid var(--line-soft);align-items:start;} .row .k{color:var(--ink-soft);}
-  details.howto{margin-top:24px;border:1px solid var(--line);border-radius:9px;background:var(--card);}
-  details.howto>summary{cursor:pointer;padding:13px 16px;font-weight:700;font-size:13.5px;list-style:none;} details.howto>summary::-webkit-details-marker{display:none;}
-  details.howto>summary::before{content:"▸ ";color:var(--accent);} details.howto[open]>summary::before{content:"▾ ";}
-  .howbody{padding:0 16px 16px;font-size:13px;} .howbody ol{margin:6px 0 12px;padding-left:20px;} .howbody li{margin:5px 0;}
   pre{background:#22283a;color:#e8e4d8;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px;line-height:1.5;} pre .c{color:#8b93a7;}
   footer{padding-top:22px;font-size:12px;color:var(--ink-soft);}
   @media (max-width:560px){h1{font-size:23px;}} @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
@@ -77,10 +71,7 @@
     <p class="sub">히가시노 게이고 작품을 범행 동기·분위기·주제로 태그화하여, 입문자가 취향에 맞는 작품을 찾도록 돕는 추천 프로그램</p>
     <p class="byline">2학년 김수성 &nbsp;·&nbsp; 수록 작품 <span class="mono" id="n-works">0</span>편 &nbsp;·&nbsp; 태그 확인 완료 <span class="mono" id="n-ok">0</span>편</p>
   </header>
-  <div class="banner">
-    <b>한 작품에 범행 동기 태그를 여러 개 붙일 수 있다. 제목·발표 연도는 실제 정보이지만, 태그는 대표작 3편(<span class="mono">확인</span> 표시)만 확정이고 나머지는 잠정(예시) 태그다.</b>
-    읽은 내용으로 각 작품의 태그를 직접 확인·수정하라. 데이터는 works.json에서 불러오며, 넣는 법은 페이지 하단에 있다.
-  </div>
+
   <div class="tabs" role="tablist">
     <button class="tab on" id="tab-rec" role="tab">태그로 추천 받기</button>
     <button class="tab" id="tab-trend" role="tab">시대별 동기 분포</button>
@@ -95,25 +86,6 @@
     <p class="reccount" id="rec-count"></p>
     <div class="cards" id="rec-cards"></div>
     <p class="empty" id="rec-empty" style="display:none;">고른 태그에 맞는 작품이 없다. 태그를 줄여 보라.</p>
-    <details class="howto">
-      <summary>태그 넣는 법 (내 분류로 채우기)</summary>
-      <div class="howbody">
-        <ol>
-          <li>같이 받은 <code>works.json</code> 파일을 문서 편집기로 연다.</li>
-          <li>각 작품의 태그를 읽은 내용에 맞게 고친다. <code>motives</code>에는 동기를 여러 개 넣을 수 있다.</li>
-          <li><code>verified</code>를 <code>true</code>로 바꾸면 카드에 ‘확인’ 배지가 붙는다.</li>
-        </ol>
-<pre><span class="c">// motives: 여러 개 가능 — 1 원한·복수 / 2 치정·애정 / 3 금전·이익</span>
-<span class="c">//   4 은폐·자기보호 / 5 사회구조적 / 6 우발·기타 / 0 비추리(동기 없음)</span>
-<span class="c">// period: 1 초기(1985~99) / 2 중기(2000~09) / 3 후기(2010~26)</span>
-{ "id":"w31", "title":"작품 제목", "year":2015, "period":3,
-  "motives":[5,4],                <span class="c">// 동기(여러 개)</span>
-  "sub":["사회파","대반전"],        <span class="c">// 분위기·세부 장르</span>
-  "theme":["격차·빈곤","가족"],     <span class="c">// 사회·주제 이슈</span>
-  "starter":false, "immersive":true, "verified":true }</pre>
-        <p style="margin:2px 0 0;color:var(--ink-soft);">works.json을 고치고 새로고침하면 반영된다. 깃허브 페이지에 두 파일을 함께 올리면 링크로 공유할 수 있다.</p>
-      </div>
-    </details>
   </section>
   <section class="panelview hide" id="view-trend">
     <h2>시대별 범행 동기 분포 — 후기로 갈수록 사회구조적 요인이 느는지 본다</h2>
@@ -131,7 +103,7 @@
 </div>
 <script>
 "use strict";
-  let WORKS = [];
+let WORKS = [];
 function gv(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
 const MOTIVE = {
   1:{l:"원한·복수",c:gv("--m1")}, 2:{l:"치정·애정",c:gv("--m2")}, 3:{l:"금전·이익",c:gv("--m3")},
@@ -140,43 +112,6 @@ const MOTIVE = {
 };
 const PERIOD = { 1:{l:"초기 (1985~99)",s:"초기"}, 2:{l:"중기 (2000~09)",s:"중기"}, 3:{l:"후기 (2010~26)",s:"후기"} };
 
-/* 인라인 대체 데이터 (works.json을 못 불러올 때만 사용). works.json과 동일하게 유지한다. 
-let WORKS = [
-  { "id": "byh", "title": "백야행", "year": 1999, "period": 1, "motives": [5, 4], "sub": ["사회파", "대반전"], "theme": ["격차·빈곤", "가족"], "starter": false, "immersive": true, "verified": true },
-  { "id": "swk", "title": "방황하는 칼날", "year": 2004, "period": 2, "motives": [1, 5], "sub": ["사회파", "서스펜스"], "theme": ["소년범죄"], "starter": false, "immersive": true, "verified": true },
-  { "id": "xhs", "title": "용의자 X의 헌신", "year": 2005, "period": 2, "motives": [2, 4], "sub": ["본격추리", "대반전"], "theme": ["가족"], "starter": true, "immersive": true, "verified": true },
-
-  { "id": "hbg", "title": "방과 후", "year": 1985, "period": 1, "motives": [6], "sub": ["본격추리"], "theme": ["학교"], "starter": true, "immersive": false, "verified": false },
-  { "id": "jse", "title": "졸업", "year": 1986, "period": 1, "motives": [1], "sub": ["본격추리", "형사물"], "theme": ["학교"], "starter": false, "immersive": false, "verified": false },
-  { "id": "sjp", "title": "십자저택의 피에로", "year": 1989, "period": 1, "motives": [4], "sub": ["본격추리"], "theme": [], "starter": false, "immersive": false, "verified": false },
-  { "id": "smy", "title": "숙명", "year": 1990, "period": 1, "motives": [1], "sub": ["본격추리", "서스펜스"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
-  { "id": "bsn", "title": "변신", "year": 1991, "period": 1, "motives": [6], "sub": ["서스펜스"], "theme": ["의료·과학"], "starter": false, "immersive": true, "verified": false },
-  { "id": "gms", "title": "가면산장 살인사건", "year": 1995, "period": 1, "motives": [6, 1], "sub": ["본격추리", "대반전"], "theme": [], "starter": true, "immersive": true, "verified": false },
-  { "id": "aki", "title": "악의", "year": 1996, "period": 1, "motives": [1], "sub": ["형사물", "대반전"], "theme": ["학교"], "starter": false, "immersive": true, "verified": false },
-  { "id": "gal", "title": "탐정 갈릴레오", "year": 1998, "period": 1, "motives": [6], "sub": ["과학수사", "본격추리"], "theme": ["의료·과학"], "starter": true, "immersive": false, "verified": false },
-  { "id": "bml", "title": "비밀", "year": 1998, "period": 1, "motives": [0], "sub": ["휴먼·감동", "서스펜스"], "theme": ["가족"], "starter": false, "immersive": true, "verified": false },
-
-  { "id": "pyj", "title": "예지몽", "year": 2000, "period": 2, "motives": [6], "sub": ["서스펜스", "과학수사"], "theme": [], "starter": false, "immersive": false, "verified": false },
-  { "id": "gyu", "title": "게임의 이름은 유괴", "year": 2002, "period": 2, "motives": [3, 1], "sub": ["서스펜스", "대반전"], "theme": [], "starter": false, "immersive": true, "verified": false },
-  { "id": "pje", "title": "편지", "year": 2003, "period": 2, "motives": [3, 5], "sub": ["사회파", "휴먼·감동"], "theme": ["범죄자 가족", "격차·빈곤"], "starter": false, "immersive": true, "verified": false },
-  { "id": "rsg", "title": "붉은 손가락", "year": 2006, "period": 2, "motives": [4], "sub": ["형사물", "사회파"], "theme": ["가족", "복지·고령"], "starter": false, "immersive": true, "verified": false },
-  { "id": "ysi", "title": "유성의 인연", "year": 2008, "period": 2, "motives": [1, 3], "sub": ["서스펜스", "휴먼·감동"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
-  { "id": "sgg", "title": "성녀의 구제", "year": 2008, "period": 2, "motives": [2], "sub": ["과학수사", "본격추리", "대반전"], "theme": ["가족"], "starter": false, "immersive": true, "verified": false },
-  { "id": "scj", "title": "신참자", "year": 2009, "period": 2, "motives": [6], "sub": ["형사물", "휴먼·감동"], "theme": ["가족"], "starter": true, "immersive": false, "verified": false },
-
-  { "id": "bej", "title": "백은의 잭", "year": 2010, "period": 3, "motives": [3], "sub": ["서스펜스"], "theme": [], "starter": false, "immersive": false, "verified": false },
-  { "id": "krn", "title": "기린의 날개", "year": 2011, "period": 3, "motives": [4, 5], "sub": ["형사물", "사회파"], "theme": ["노동·산재", "가족"], "starter": false, "immersive": true, "verified": false },
-  { "id": "msk", "title": "매스커레이드 호텔", "year": 2011, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": [], "starter": true, "immersive": false, "verified": false },
-  { "id": "nmy", "title": "나미야 잡화점의 기적", "year": 2012, "period": 3, "motives": [0], "sub": ["휴먼·감동"], "theme": ["가족", "고민 상담"], "starter": true, "immersive": true, "verified": false },
-  { "id": "mhh", "title": "몽환화", "year": 2013, "period": 3, "motives": [1], "sub": ["서스펜스"], "theme": ["가족"], "starter": false, "immersive": false, "verified": false },
-  { "id": "gdm", "title": "기도의 막이 내릴 때", "year": 2013, "period": 3, "motives": [4, 5], "sub": ["형사물", "휴먼·감동"], "theme": ["가족", "격차·빈곤"], "starter": false, "immersive": true, "verified": false },
-  { "id": "gsj", "title": "공허한 십자가", "year": 2014, "period": 3, "motives": [5, 1], "sub": ["사회파"], "theme": ["사형·정의", "범죄 피해"], "starter": false, "immersive": true, "verified": false },
-  { "id": "lpm", "title": "라플라스의 마녀", "year": 2015, "period": 3, "motives": [6], "sub": ["과학수사", "서스펜스"], "theme": ["의료·과학"], "starter": false, "immersive": false, "verified": false },
-  { "id": "knm", "title": "녹나무의 파수꾼", "year": 2020, "period": 3, "motives": [0], "sub": ["휴먼·감동"], "theme": ["가족"], "starter": true, "immersive": false, "verified": false },
-  { "id": "bsm", "title": "블랙 쇼맨과 이름 없는 마을의 살인", "year": 2020, "period": 3, "motives": [6], "sub": ["본격추리", "서스펜스"], "theme": ["지역·사회"], "starter": false, "immersive": false, "verified": false },
-  { "id": "bcb", "title": "백조와 박쥐", "year": 2021, "period": 3, "motives": [4, 5], "sub": ["사회파", "대반전"], "theme": ["사법·정의", "가족"], "starter": false, "immersive": true, "verified": false }
-];
-*/
 const MOTIVE_ORDER = [1,2,3,4,5,6,0];
 const CATS = [
   { key:"motive", label:"범행 동기", get:w=> (w.motives||[]).map(m=>MOTIVE[m].l), color:v=>{ const k=Object.keys(MOTIVE).find(k=>MOTIVE[k].l===v); return MOTIVE[k].c; } },
@@ -273,7 +208,7 @@ function renderChart(){
   svg.innerHTML=s;
   const lg=document.getElementById("legend"); lg.innerHTML="";
   MOTIVE_ORDER.forEach(m=>{ const el=document.createElement("span"); el.className="item"; el.innerHTML='<span class="dot" style="background:'+MOTIVE[m].c+'"></span>'+MOTIVE[m].l; lg.appendChild(el); });
-  document.getElementById("chart-note").textContent="※ 한 작품이 여러 동기를 가질 수 있어, 막대는 동기 태그의 개수를 센 것이다. 지금은 잠정(예시) 태그 기준이라 참고용이며, 각 작품의 동기를 확정 분류로 바꾸면 실제 경향이 나온다.";
+  document.getElementById("chart-note").textContent="본 프로그램은 히가시노 게이고 작품의 범행 동기 분포를 분석하여 독자의 취향에 맞는 입문작을 찾아주기 위해 제작되었습니다.";
 }
 function esc(s){ return String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m])); }
 function showTab(which){ const rec=which==="rec";
